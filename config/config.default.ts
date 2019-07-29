@@ -7,6 +7,12 @@ export default (appInfo: EggAppInfo) => {
     // use for cookie sign key, should change to your own and keep security
     config.keys = appInfo.name + '_1564305845333_5058';
 
+    // config.security = {
+    //     csrf:false , // 是否开启csrf
+    // }
+    config.session = {
+        renew : false
+    }
     // add your egg config in here
     config.middleware = [];
     // add view

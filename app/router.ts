@@ -7,5 +7,8 @@ export default (app: Application) => {
         .get('/', controller.home.index)
         .get('/counter', controller.home.counter)
         .get('/news', controller.home.news)
-        .get('/playList', controller.music.catlist);
+        .get('/playList', controller.music.catlist)
+
+        .get('/users/list', controller.users.list)
+        .post('/users/add', controller.users.add)
 };
