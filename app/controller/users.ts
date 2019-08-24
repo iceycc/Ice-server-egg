@@ -11,4 +11,15 @@ export default class UsersController extends Controller{
         users.push(user)
         ctx.body = users
     }
+    async getUser(){
+        const { ctx } = this;
+        const {id} = ctx.query
+        ctx.body = await ctx.service.user.getUserInfoById(id);
+    }
+    async register(){
+        const {ctx} = this
+        const {phone,email,nickname,password,prefix,website} = ctx.request.body
+        console.log(ctx.request.body);
+        ctx.body = await ctx.service.user.register({phone,email,nickname,password,prefix,website})
+    }
 }
